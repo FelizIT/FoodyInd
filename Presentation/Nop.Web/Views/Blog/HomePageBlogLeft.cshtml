@@ -1,0 +1,24 @@
+﻿@using Nop.Web.Models.Blogs;
+@using Nop.Web;
+@using Nop.Web.Extensions;
+
+<div class="block block-category-navigation">
+    <div class="title">
+        <strong>@T("Articles")</strong>
+    </div>
+
+    <div class="listbox">
+        <ul class="list">
+            @foreach (var item in Model.BlogPosts)
+            {
+                <li class="active">
+                    <a href="@Url.RouteUrl("BlogPost", new { blogPostId = item.Id, SeName = item.SeName })">
+                        @item.Title
+                    </a>
+                </li>
+            }
+        </ul>
+    </div>
+</div>
+
+ 
